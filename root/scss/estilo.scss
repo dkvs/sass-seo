@@ -1,0 +1,132 @@
+$bg_claro: #efefef;
+$bg_header: rgb(241,237,231);
+$bg_fuente: black;
+
+@import "body";
+@import "header";
+@import "footer";
+
+/* MIXIN */
+
+@mixin titulo($bg_fuentes){
+    color: $bg_fuente;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    text-align: start;
+}
+
+
+.title-section {
+	@include titulo($bg_header)
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    display: inline;
+    list-style: none;
+    margin: 6px;
+    padding: 8px;
+}
+
+.menuLink {
+    color: rgb(20, 20, 20);
+}
+
+.main{
+    background-color: #efefef;
+    width: 100%;
+	margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "slider slider slider slider"
+        "carrousel carrousel carrousel carrousel"
+        "colecciones colecciones colecciones colecciones";
+    gap: 10px;
+
+    .slider{
+        grid-area: slider;
+        text-align: center;
+    }
+    
+    .slider img {
+        width:100%;
+    }
+
+    /*EXTEND*/
+
+
+    .carrousel {
+        grid-area: carrousel;
+        padding-top: 100px;
+        .productos{
+            @extend .carrousel;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            overflow:hidden;
+        }
+    }
+    
+    .colecciones {
+        grid-area: colecciones;
+        padding-top: 100px;
+    
+    }
+    
+    
+    .dif-colecc {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .effect {
+        position: relative;
+        width: 50%;
+      }
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: rgba(0, 0, 0, 0.801);
+      }
+      
+      .effect:hover .overlay {
+        opacity: 1;
+      }
+    
+      .secc {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      
+      
+      .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+}
+
