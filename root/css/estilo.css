@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+* {
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  background-color: #efefef;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase; }
+
+/* efecto limon */
+#flecha {
+  font-weight: bold;
+  position: relative;
+  top: 8px; }
+
+.btn {
+  padding: 0 12px 9px; }
+
+#flecha {
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out; }
+
+.logo:hover #flecha {
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg); }
+
+header {
+  background-color: #f1ede7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px 8px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 100; }
+
+/*MAP*/
+.fa-twitter {
+  background: #a0d2fc; }
+
+.fa-instagram {
+  background: #c27ad8; }
+
+.fa-facebook {
+  background: #567ce6; }
+
+footer {
+  background-color: rgba(0, 0, 0, 0.801);
+  color: blanchedalmond;
+  width: 100%;
+  margin: 20px auto;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "menu-footer products contact logo" "menu-footer products contact logo";
+  gap: 10px; }
+  footer .menu-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px; }
+  footer .items-title {
+    padding-top: 10px;
+    padding-bottom: 20px; }
+  footer .footerLink {
+    color: blanchedalmond;
+    font-size: 12px; }
+  footer .products {
+    padding-right: 20px; }
+  footer .items {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 12px; }
+  footer .contact {
+    padding-right: 20px; }
+  footer .fa {
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px; }
+  footer .fa:hover {
+    opacity: 0.7; }
+  footer .logo-limon-footer {
+    text-align: center; }
+
+/* MIXIN */
+.title-section {
+  color: black;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  text-align: start; }
+
+a {
+  text-decoration: none; }
+
+li {
+  display: inline;
+  list-style: none;
+  margin: 6px;
+  padding: 8px; }
+
+.menuLink {
+  color: #141414; }
+
+.main {
+  background-color: #efefef;
+  width: 100%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "slider slider slider slider" "carrousel carrousel carrousel carrousel" "colecciones colecciones colecciones colecciones";
+  gap: 10px;
+  /*EXTEND*/ }
+  .main .slider {
+    grid-area: slider;
+    text-align: center; }
+  .main .slider img {
+    width: 100%; }
+  .main .carrousel, .main .carrousel .productos {
+    grid-area: carrousel;
+    padding-top: 100px; }
+    .main .carrousel .productos {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      overflow: hidden; }
+  .main .colecciones {
+    grid-area: colecciones;
+    padding-top: 100px; }
+  .main .dif-colecc {
+    display: flex;
+    justify-content: space-around; }
+  .main .effect {
+    position: relative;
+    width: 50%; }
+  .main .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.801); }
+  .main .effect:hover .overlay {
+    opacity: 1; }
+  .main .secc {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .main .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center; }
